@@ -16,9 +16,9 @@ namespace Курсовая
         public int SpeedMin = 1;
         public int RadiusMin = 2;
         public int SpeedMax = 10; 
-        public int RadiusMax = 10; 
+        public int RadiusMax = 10;
+        public float LifeMax = 100;
         public float LifeMin = 20; 
-        public float LifeMax = 100; 
         public int ParticlesPerTick = 40;
         public Color ColorFrom = Color.White; 
         public Color ColorTo = Color.FromArgb(0, Color.Black); 
