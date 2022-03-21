@@ -137,14 +137,37 @@ namespace Курсовая
                 case 1:
                     {
                         (emitters[0] as TopEmitter).Width = picDisplay.Width;
+                        (emitters[0] as TopEmitter).Height = 0;
                         (emitters[0] as TopEmitter).GravitationY = 0.25f;
+                        (emitters[0] as TopEmitter).GravitationX = 0;
+                        (emitters[0] as TopEmitter).p = true;
                     }
                     break;
                 case 2:
                     {
                         (emitters[0] as TopEmitter).Width = picDisplay.Width;
                         (emitters[0] as TopEmitter).Height = picDisplay.Height;
-                        (emitters[0] as TopEmitter).GravitationY *=-1;
+                        (emitters[0] as TopEmitter).GravitationY =-0.25f;
+                        (emitters[0] as TopEmitter).GravitationX = 0;
+                        (emitters[0] as TopEmitter).p = true;
+                    }
+                    break;
+                case 3:
+                    {
+                        (emitters[0] as TopEmitter).Height = picDisplay.Height;
+                        (emitters[0] as TopEmitter).Width = 0;
+                        (emitters[0] as TopEmitter).GravitationY = 0;
+                        (emitters[0] as TopEmitter).GravitationX = 0.25f;
+                        (emitters[0] as TopEmitter).p = false;
+                    }
+                    break;
+                case 4:
+                    {
+                        (emitters[0] as TopEmitter).Width = picDisplay.Width;
+                        (emitters[0] as TopEmitter).Height = picDisplay.Height;
+                        (emitters[0] as TopEmitter).GravitationY = 0;
+                        (emitters[0] as TopEmitter).GravitationX = -0.25f;
+                        (emitters[0] as TopEmitter).p = false;
                     }
                     break;
             }
@@ -152,7 +175,15 @@ namespace Курсовая
 
         private void trackBar1_Scroll(object sender, EventArgs e)
         {
-            (emitter as TopEmitter).SpeedX = tbSpeed.Value;
+            if (tbWidth.Value==1 || tbWidth.Value == 2)
+            {
+                (emitter as TopEmitter).SpeedX = tbSpeed.Value;
+            }
+            if (tbWidth.Value == 3 || tbWidth.Value == 4)
+            {
+                (emitter as TopEmitter).SpeedY = tbSpeed.Value;
+            }
+
             infoSpeed.Text = tbSpeed.Value.ToString();
         }
 

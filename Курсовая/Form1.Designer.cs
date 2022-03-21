@@ -51,9 +51,9 @@ namespace Курсовая
             // 
             // picDisplay
             // 
-            this.picDisplay.Location = new System.Drawing.Point(0, 0);
+            this.picDisplay.Location = new System.Drawing.Point(1, 0);
             this.picDisplay.Name = "picDisplay";
-            this.picDisplay.Size = new System.Drawing.Size(992, 540);
+            this.picDisplay.Size = new System.Drawing.Size(993, 540);
             this.picDisplay.TabIndex = 0;
             this.picDisplay.TabStop = false;
             this.picDisplay.Click += new System.EventHandler(this.picDisplay_Click);
@@ -98,7 +98,7 @@ namespace Курсовая
             // tbWidth
             // 
             this.tbWidth.Location = new System.Drawing.Point(220, 586);
-            this.tbWidth.Maximum = 2;
+            this.tbWidth.Maximum = 4;
             this.tbWidth.Minimum = 1;
             this.tbWidth.Name = "tbWidth";
             this.tbWidth.Size = new System.Drawing.Size(180, 45);

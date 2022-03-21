@@ -117,14 +117,26 @@ namespace Курсовая
         public int Height;
 
         public int SpeedX;
+        public int SpeedY;
+        public Boolean p;
         public override void ResetParticle(Particle particle)
         {
-            base.ResetParticle(particle); 
+            base.ResetParticle(particle);
+            if (p==true)
+            {
+                particle.X = Particle.rand.Next(Width);
+                particle.Y = Height;
+            }
+            if (p==false)
+            {
+                particle.Y = Particle.rand.Next(Height);
+                particle.X = Width;
+            }
 
-            particle.X = Particle.rand.Next(Width); 
-            particle.Y = Height;
 
-            particle.SpeedY = 1;
+
+
+            particle.SpeedY = Particle.rand.Next(-SpeedY, SpeedY);
             particle.SpeedX = Particle.rand.Next(-SpeedX, SpeedX);
         }
     }
