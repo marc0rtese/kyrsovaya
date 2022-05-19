@@ -51,9 +51,9 @@ namespace Курсовая
             // 
             // picDisplay
             // 
-            this.picDisplay.Location = new System.Drawing.Point(1, 0);
+            this.picDisplay.Location = new System.Drawing.Point(-1, -1);
             this.picDisplay.Name = "picDisplay";
-            this.picDisplay.Size = new System.Drawing.Size(993, 540);
+            this.picDisplay.Size = new System.Drawing.Size(540, 540);
             this.picDisplay.TabIndex = 0;
             this.picDisplay.TabStop = false;
             this.picDisplay.Click += new System.EventHandler(this.picDisplay_Click);
@@ -68,7 +68,7 @@ namespace Курсовая
             // 
             // tbTick
             // 
-            this.tbTick.Location = new System.Drawing.Point(16, 586);
+            this.tbTick.Location = new System.Drawing.Point(557, 176);
             this.tbTick.Maximum = 100;
             this.tbTick.Minimum = 10;
             this.tbTick.Name = "tbTick";
@@ -80,7 +80,7 @@ namespace Курсовая
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(70, 555);
+            this.label1.Location = new System.Drawing.Point(605, 160);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(73, 13);
             this.label1.TabIndex = 2;
@@ -89,7 +89,7 @@ namespace Курсовая
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(273, 555);
+            this.label2.Location = new System.Drawing.Point(606, 305);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(75, 13);
             this.label2.TabIndex = 4;
@@ -97,8 +97,8 @@ namespace Курсовая
             // 
             // tbWidth
             // 
-            this.tbWidth.Location = new System.Drawing.Point(220, 586);
-            this.tbWidth.Maximum = 4;
+            this.tbWidth.Location = new System.Drawing.Point(558, 321);
+            this.tbWidth.Maximum = 360;
             this.tbWidth.Minimum = 1;
             this.tbWidth.Name = "tbWidth";
             this.tbWidth.Size = new System.Drawing.Size(180, 45);
@@ -109,7 +109,7 @@ namespace Курсовая
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(494, 555);
+            this.label3.Location = new System.Drawing.Point(606, 455);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(55, 13);
             this.label3.TabIndex = 6;
@@ -117,7 +117,7 @@ namespace Курсовая
             // 
             // tbSpeed
             // 
-            this.tbSpeed.Location = new System.Drawing.Point(431, 586);
+            this.tbSpeed.Location = new System.Drawing.Point(558, 482);
             this.tbSpeed.Maximum = 7;
             this.tbSpeed.Minimum = 1;
             this.tbSpeed.Name = "tbSpeed";
@@ -128,9 +128,9 @@ namespace Курсовая
             // 
             // colorButton
             // 
-            this.colorButton.Location = new System.Drawing.Point(675, 570);
+            this.colorButton.Location = new System.Drawing.Point(608, 45);
             this.colorButton.Name = "colorButton";
-            this.colorButton.Size = new System.Drawing.Size(47, 36);
+            this.colorButton.Size = new System.Drawing.Size(64, 49);
             this.colorButton.TabIndex = 8;
             this.colorButton.UseVisualStyleBackColor = true;
             this.colorButton.Click += new System.EventHandler(this.colorButton_Click);
@@ -138,32 +138,35 @@ namespace Курсовая
             // infoTick
             // 
             this.infoTick.AutoSize = true;
-            this.infoTick.Location = new System.Drawing.Point(149, 555);
+            this.infoTick.Location = new System.Drawing.Point(694, 160);
             this.infoTick.Name = "infoTick";
-            this.infoTick.Size = new System.Drawing.Size(0, 13);
+            this.infoTick.Size = new System.Drawing.Size(13, 13);
             this.infoTick.TabIndex = 9;
+            this.infoTick.Text = "1";
             // 
             // infoWigth
             // 
             this.infoWigth.AutoSize = true;
-            this.infoWigth.Location = new System.Drawing.Point(354, 555);
+            this.infoWigth.Location = new System.Drawing.Point(695, 305);
             this.infoWigth.Name = "infoWigth";
-            this.infoWigth.Size = new System.Drawing.Size(0, 13);
+            this.infoWigth.Size = new System.Drawing.Size(13, 13);
             this.infoWigth.TabIndex = 10;
+            this.infoWigth.Text = "2";
             // 
             // infoSpeed
             // 
             this.infoSpeed.AutoSize = true;
-            this.infoSpeed.Location = new System.Drawing.Point(555, 555);
+            this.infoSpeed.Location = new System.Drawing.Point(695, 455);
             this.infoSpeed.Name = "infoSpeed";
-            this.infoSpeed.Size = new System.Drawing.Size(0, 13);
+            this.infoSpeed.Size = new System.Drawing.Size(13, 13);
             this.infoSpeed.TabIndex = 11;
+            this.infoSpeed.Text = "3";
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(989, 618);
+            this.ClientSize = new System.Drawing.Size(749, 540);
             this.Controls.Add(this.infoSpeed);
             this.Controls.Add(this.infoWigth);
             this.Controls.Add(this.infoTick);

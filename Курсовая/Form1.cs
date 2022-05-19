@@ -24,7 +24,12 @@ namespace Курсовая
             emitter = new TopEmitter
             {
                 Width = picDisplay.Width,
-                GravitationY = 0.25f
+                GravitationY = 0.25f,
+                SpeedX = 2,
+                SpeedY = 2,
+                fi = tbWidth.Value,
+                Height = picDisplay.Height,
+                R = picDisplay.Height / 2
             };
             point =  new ColorPoint
             {
@@ -43,6 +48,7 @@ namespace Курсовая
             colorButton.BackColor = colorDialog1.Color;
             infoSpeed.Text = tbSpeed.Value.ToString();
             infoTick.Text = tbTick.Value.ToString();
+            infoWigth.Text = tbWidth.Value.ToString();
 
         }
 
@@ -128,62 +134,24 @@ namespace Курсовая
 
         private void tbWidth_Scroll(object sender, EventArgs e)
         {
-            (emitters[0] as TopEmitter).Width = 0;
-            (emitters[0] as TopEmitter).Height = 0;
-            (emitters[0] as TopEmitter).GravitationY = 0.25f;
+            infoWigth.Text = tbWidth.Value.ToString();
             emitters[0].particles.Clear();
-            switch (tbWidth.Value)
-            {
-                case 1:
-                    {
-                        (emitters[0] as TopEmitter).Width = picDisplay.Width;
-                        (emitters[0] as TopEmitter).Height = 0;
-                        (emitters[0] as TopEmitter).GravitationY = 0.25f;
-                        (emitters[0] as TopEmitter).GravitationX = 0;
-                        (emitters[0] as TopEmitter).p = true;
-                    }
-                    break;
-                case 2:
-                    {
-                        (emitters[0] as TopEmitter).Width = picDisplay.Width;
-                        (emitters[0] as TopEmitter).Height = picDisplay.Height;
-                        (emitters[0] as TopEmitter).GravitationY =-0.25f;
-                        (emitters[0] as TopEmitter).GravitationX = 0;
-                        (emitters[0] as TopEmitter).p = true;
-                    }
-                    break;
-                case 3:
-                    {
-                        (emitters[0] as TopEmitter).Height = picDisplay.Height;
-                        (emitters[0] as TopEmitter).Width = 0;
-                        (emitters[0] as TopEmitter).GravitationY = 0;
-                        (emitters[0] as TopEmitter).GravitationX = 0.25f;
-                        (emitters[0] as TopEmitter).p = false;
-                    }
-                    break;
-                case 4:
-                    {
-                        (emitters[0] as TopEmitter).Width = picDisplay.Width;
-                        (emitters[0] as TopEmitter).Height = picDisplay.Height;
-                        (emitters[0] as TopEmitter).GravitationY = 0;
-                        (emitters[0] as TopEmitter).GravitationX = -0.25f;
-                        (emitters[0] as TopEmitter).p = false;
-                    }
-                    break;
-            }
+            
+            (emitters[0] as TopEmitter).fi = tbWidth.Value;
+            (emitters[0] as TopEmitter).Width = picDisplay.Width;
+            (emitters[0] as TopEmitter).Height = picDisplay.Height;
+            (emitters[0] as TopEmitter).R = picDisplay.Height / 2;
+            //(emitters[0] as TopEmitter).R = 382;
+            (emitters[0] as Emitter).n = tbWidth.Value;
+            //Радиус для круга за квадратом 382
+
+
         }
 
         private void trackBar1_Scroll(object sender, EventArgs e)
         {
-            if (tbWidth.Value==1 || tbWidth.Value == 2)
-            {
-                (emitter as TopEmitter).SpeedX = tbSpeed.Value;
-            }
-            if (tbWidth.Value == 3 || tbWidth.Value == 4)
-            {
-                (emitter as TopEmitter).SpeedY = tbSpeed.Value;
-            }
-
+            (emitter as TopEmitter).SpeedY = tbSpeed.Value;
+            (emitter as TopEmitter).SpeedX = tbSpeed.Value;
             infoSpeed.Text = tbSpeed.Value.ToString();
         }
 

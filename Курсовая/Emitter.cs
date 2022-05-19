@@ -21,7 +21,8 @@ namespace Курсовая
         public float LifeMin = 20; 
         public int ParticlesPerTick = 40;
         public Color ColorFrom = Color.White; 
-        public Color ColorTo = Color.FromArgb(0, Color.Black); 
+        public Color ColorTo = Color.FromArgb(0, Color.Black);
+        public int n;
 
         public List<IImpactPoint> impactPoints = new List<IImpactPoint>();
 
@@ -49,16 +50,15 @@ namespace Курсовая
                 }
                 else
                 {
-                    particle.X += particle.SpeedX;
-                    particle.Y += particle.SpeedY;
+                    particle.Direction = n;
+                    var DirectionInRadians = particle.Direction / 180 * Math.PI;
+                    particle.X += -(float)(particle.SpeedX * Math.Cos(DirectionInRadians));
+                    particle.Y += -(float)(particle.SpeedY * Math.Sin(DirectionInRadians));
 
                     foreach (var point in impactPoints)
                     {
                         point.ImpactParticle(particle);
                     }
-
-                    particle.SpeedX += GravitationX;
-                    particle.SpeedY += GravitationY;
 
                 }
             }
@@ -90,6 +90,7 @@ namespace Курсовая
             (particle as ParticleColorful).FromColor = ColorFrom;
             particle.X = X;
             particle.Y = Y;
+            particle.Direction = n;
 
             var direction = Direction
                 + (double)Particle.rand.Next(Spreading)
@@ -97,8 +98,8 @@ namespace Курсовая
 
             var speed = Particle.rand.Next(SpeedMin, SpeedMax);
 
-            particle.SpeedX = (float)(Math.Cos(direction / 180 * Math.PI) * speed);
-            particle.SpeedY = -(float)(Math.Sin(direction / 180 * Math.PI) * speed);
+            particle.SpeedX = (float)(Math.Cos(n / 180 * Math.PI) * speed);
+            particle.SpeedY = -(float)(Math.Sin(n / 180 * Math.PI) * speed);
 
             particle.Radius = Particle.rand.Next(RadiusMin, RadiusMax);
         }
@@ -115,29 +116,20 @@ namespace Курсовая
     {
         public int Width;
         public int Height;
+        public int fi;
+        public int R;
+        public int n=360;
 
         public int SpeedX;
         public int SpeedY;
-        public Boolean p;
         public override void ResetParticle(Particle particle)
         {
             base.ResetParticle(particle);
-            if (p==true)
-            {
-                particle.X = Particle.rand.Next(Width);
-                particle.Y = Height;
-            }
-            if (p==false)
-            {
-                particle.Y = Particle.rand.Next(Height);
-                particle.X = Width;
-            }
+            particle.X = (Single)(Math.Cos(2 * Math.PI * fi / n) * R + Height / 2);
+            particle.Y = (Single)(Math.Sin(2 * Math.PI * fi / n) * R + Height / 2);
 
-
-
-
-            particle.SpeedY = Particle.rand.Next(-SpeedY, SpeedY);
-            particle.SpeedX = Particle.rand.Next(-SpeedX, SpeedX);
+            particle.SpeedY = SpeedY;
+            particle.SpeedX = SpeedX;
         }
     }
 }
